@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="envelope" class="it.learning.spring.core.beaninherit.Envelope">
+        <property name="source" value="Me"/>
+        <property name="destination" value="Santa Claus"></property>
+    </bean>
+
+    <bean id="envelope1" class="it.learning.spring.core.beaninherit.Envelope">
+        <property name="source" value="Me"/>
+        <property name="destination" value="Santa Claus"></property>
+        <property name="message" value="I Want a Hippopotamus For Christmas"/>
+    </bean>
+
+    <bean id="envelope2" class="it.learning.spring.core.beaninherit.Envelope" parent="envelope1">
+        <property name="message" value="I Want a Porsche Cayenne For Christmas"/>
+    </bean>
+
+    <bean id="gift" class="it.learning.spring.core.beaninherit.GiftRequest" parent="envelope">
+        <property name="reason" value="Because I can"/>
+    </bean>
+
+</beans>

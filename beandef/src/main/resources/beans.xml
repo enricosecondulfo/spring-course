@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="simple" class="it.learning.spring.beandef.Message">
+        <property name="message" value="Let's party!"/>
+    </bean>
+
+    <bean id="lazy" class="it.learning.spring.beandef.Message" lazy-init="true">
+        <property name="message" value="Another message here"/>
+    </bean>
+
+    <bean id="envelope" class="it.learning.spring.beandef.Envelope">
+        <property name="source" value="Me"/>
+        <property name="destination" value="Santa Claus"/>
+        <property name="message" ref="simple"/>
+    </bean>
+
+    <bean id="secondEnvelope" class="it.learning.spring.beandef.Envelope">
+        <property name="source" value="Me"/>
+        <property name="destination" value="Mos Craciun"/>
+        <property name="message">
+            <bean class="it.learning.spring.beandef.Message">
+                <property name="message" value="I Want a Hippopotamus For Christmas"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="mailbox" class="it.learning.spring.beandef.MailBox" init-method="init" destroy-method="destroy">
+        <property name="envelopes">
+            <list>
+                <ref bean="envelope"/>
+                <ref bean="secondEnvelope"/>
+            </list>
+        </property>
+    </bean>
+</beans>
