@@ -1,14 +1,15 @@
-package it.learning.spring.web.services;
+package it.learning.spring.web.repositories;
 
 import it.learning.spring.web.models.User;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-@Service
-public class UserService {
+@Repository
+public class UserRepository {
 
     private Map<Long, User> users = new HashMap<>();
 

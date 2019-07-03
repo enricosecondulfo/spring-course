@@ -1,8 +1,7 @@
 package it.learning.spring.web.controllers;
 
 import it.learning.spring.web.models.User;
-import it.learning.spring.web.services.UserService;
-import org.springframework.http.MediaType;
+import it.learning.spring.web.repositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -11,35 +10,35 @@ import java.util.Collection;
 @RequestMapping("/users")
 public class UserController {
 
-    private UserService userService;
+    private UserRepository userRepository;
 
-    public UserController(UserService userService) {
+    public UserController(UserRepository userRepository) {
 
-        this.userService = userService;
+        this.userRepository = userRepository;
     }
 
     @GetMapping
     public Collection<User> getAll() {
-        return userService.getAll();
+        return userRepository.getAll();
     }
 
     @GetMapping(value = "/{id}")
     public User getById(@PathVariable("id") Long id) {
-        return userService.getById(id);
+        return userRepository.getById(id);
     }
 
     @PostMapping
     public void add(@RequestBody User user) {
-        userService.add(user);
+        userRepository.add(user);
     }
 
     @PutMapping
     public void update(@RequestBody User user) {
-        userService.update(user);
+        userRepository.update(user);
     }
 
     @DeleteMapping(value = "/{id}")
     public void delete(@PathVariable Long id) {
-        userService.delete(id);
+        userRepository.delete(id);
     }
 }
