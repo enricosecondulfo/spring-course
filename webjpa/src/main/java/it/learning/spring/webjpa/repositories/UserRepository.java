@@ -4,11 +4,10 @@ import it.learning.spring.webjpa.exceptions.NotFoundException;
 import it.learning.spring.webjpa.models.User;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.util.Collection;
+import java.util.List;
 
 @Transactional
 @Repository
@@ -30,6 +29,19 @@ public class UserRepository {
         } else {
             throw new NotFoundException();
         }
+    }
+
+    public User getByFirstname(String firstName) throws NoResultException {
+        TypedQuery<User> query = entityManager.createQuery("SELECT u FROM User u WHERE u.firstName = :firstName", User.class);
+        query.setParameter("firstName", firstName);
+
+       List<User> users = query.getResultList();
+
+       if (users.size() > 0) {
+           return users.get(0);
+       } else {
+           throw new NotFoundException();
+       }
     }
 
     public User add(User user) {

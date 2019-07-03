@@ -26,6 +26,11 @@ public class UserController {
         return userRepository.getById(id);
     }
 
+    @GetMapping(value = "/firstname/{firstName}")
+    public User getByFirstName(@PathVariable String firstName) {
+        return userRepository.getByFirstname(firstName);
+    }
+
     @PostMapping
     public void add(@RequestBody User user) {
         userRepository.add(user);
