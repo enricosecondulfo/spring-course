@@ -57,7 +57,7 @@ public class UserRepository {
         User user = entityManager.find(User.class, id);
 
         if (user != null) {
-            entityManager.remove(id);
+            entityManager.remove(user);
 
         } else {
             throw new NotFoundException();
