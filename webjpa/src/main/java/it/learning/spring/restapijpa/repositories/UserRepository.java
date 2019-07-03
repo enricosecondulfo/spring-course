@@ -1,7 +1,7 @@
-package it.learning.spring.webjpa.repositories;
+package it.learning.spring.restapijpa.repositories;
 
-import it.learning.spring.webjpa.exceptions.NotFoundException;
-import it.learning.spring.webjpa.models.User;
+import it.learning.spring.restapijpa.exceptions.NotFoundException;
+import it.learning.spring.restapijpa.models.User;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;

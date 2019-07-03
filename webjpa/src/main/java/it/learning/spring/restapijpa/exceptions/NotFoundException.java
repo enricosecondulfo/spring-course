@@ -1,4 +1,4 @@
-package it.learning.spring.webjpa.exceptions;
+package it.learning.spring.restapijpa.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

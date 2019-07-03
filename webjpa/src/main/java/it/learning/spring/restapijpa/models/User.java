@@ -1,6 +1,4 @@
-package it.learning.spring.webjpa.models;
-
-import com.sun.istack.NotNull;
+package it.learning.spring.restapijpa.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

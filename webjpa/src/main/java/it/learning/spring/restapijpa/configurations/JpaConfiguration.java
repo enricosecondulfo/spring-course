@@ -1,4 +1,4 @@
-package it.learning.spring.webjpa.configurations;
+package it.learning.spring.restapijpa.configurations;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class JpaConfiguration {
         LocalContainerEntityManagerFactoryBean entityManager
                 = new LocalContainerEntityManagerFactoryBean();
         entityManager.setDataSource(dataSource());
-        entityManager.setPackagesToScan(new String[] { "it.learning.spring.webjpa.models" });
+        entityManager.setPackagesToScan(new String[] { "it.learning.spring.restapijpa.models" });
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         entityManager.setJpaVendorAdapter(vendorAdapter);

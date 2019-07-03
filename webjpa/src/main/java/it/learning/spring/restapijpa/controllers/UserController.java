@@ -1,8 +1,7 @@
-package it.learning.spring.webjpa.controllers;
+package it.learning.spring.restapijpa.controllers;
 
-import it.learning.spring.webjpa.exceptions.NotFoundException;
-import it.learning.spring.webjpa.repositories.UserRepository;
-import it.learning.spring.webjpa.models.User;
+import it.learning.spring.restapijpa.repositories.UserRepository;
+import it.learning.spring.restapijpa.models.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
