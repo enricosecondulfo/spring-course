@@ -1,4 +1,4 @@
-package it.learning.spring.web.exceptions;
+package it.learning.spring.restapi.exceptions;
 
 public class NotFoundException extends RuntimeException {
 }

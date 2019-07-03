@@ -1,7 +1,7 @@
-package it.learning.spring.web.controllers;
+package it.learning.spring.restapi.controllers;
 
-import it.learning.spring.web.models.User;
-import it.learning.spring.web.repositories.UserRepository;
+import it.learning.spring.restapi.models.User;
+import it.learning.spring.restapi.repositories.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;

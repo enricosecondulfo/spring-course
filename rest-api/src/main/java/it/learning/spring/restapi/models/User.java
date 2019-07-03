@@ -1,4 +1,4 @@
-package it.learning.spring.web.models;
+package it.learning.spring.restapi.models;
 
 public class User {
 

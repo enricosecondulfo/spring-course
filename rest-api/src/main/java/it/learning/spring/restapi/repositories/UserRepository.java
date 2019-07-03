@@ -1,8 +1,7 @@
-package it.learning.spring.web.repositories;
+package it.learning.spring.restapi.repositories;
 
-import it.learning.spring.web.models.User;
+import it.learning.spring.restapi.models.User;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.HashMap;
