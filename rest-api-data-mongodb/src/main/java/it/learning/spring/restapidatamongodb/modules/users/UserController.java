@@ -1,6 +1,6 @@
-package it.learning.spring.restapidatajpa.modules.users;
+package it.learning.spring.restapidatamongodb.modules.users;
 
-import it.learning.spring.restapidatajpa.modules.users.domains.User;
+import it.learning.spring.restapidatamongodb.modules.users.domains.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<User> getById(@PathVariable("id") Long id) {
+    public ResponseEntity<User> getById(@PathVariable("id") String id) {
         return this.userRepository.findById(id)
                 .map(user -> new ResponseEntity<>(user, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
@@ -34,7 +34,7 @@ public class UserController {
     @PostMapping
     public ResponseEntity<User> add(@RequestBody User user) {
         User userSaved = this.userRepository.save(user);
-        return ResponseEntity.ok(userSaved);
+        return new ResponseEntity<>(userSaved, HttpStatus.OK);
     }
 
     @PutMapping
@@ -44,8 +44,8 @@ public class UserController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable String id) {
         this.userRepository.deleteById(id);
-        return ResponseEntity.ok().build();
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
