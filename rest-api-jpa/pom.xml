@@ -15,7 +15,7 @@
         <servlet-api.version>2.5</servlet-api.version>
         <jackson-databind.version>2.9.9</jackson-databind.version>
         <hibernate.version>5.4.3.Final</hibernate.version>
-        <h2.version>1.4.199</h2.version>
+        <h2.version>2.1.210</h2.version>
         <tomcat-dbcp.version>9.0.1</tomcat-dbcp.version>
         <junit.version>4.12</junit.version>
         <logback.version>1.2.3</logback.version>
